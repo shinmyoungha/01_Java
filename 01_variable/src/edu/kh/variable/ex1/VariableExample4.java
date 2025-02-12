@@ -39,9 +39,11 @@ public class VariableExample4 {
 		int iNum3 = 44085;
 		System.out.println( (char)iNum3 ); //갵?
 		
-		int i6 = 2147483647;
+		//오버플로우 현상은 컴퓨터가 미리 예측할 수 없다!
+		// --> 개발자가 미리 예측해야함.
+		int i6 = 2147483647; // int 최대값
 		int result2 = i6+1;
-		System.out.println(result2);
+		System.out.println(result2); // -2147483648
 		
 		
 		
