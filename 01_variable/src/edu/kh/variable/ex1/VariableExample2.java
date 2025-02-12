@@ -60,8 +60,8 @@ public class VariableExample2 {
 		// --> 문자 하나
 		char ch = 'A';
 		char ch2 = 66;
-		System.out.println("ch : " + ch);
-		System.out.println("ch2 : " + ch2);
+		System.out.println("ch : " + ch);   // 65
+		System.out.println("ch2 : " + ch2); // B 
 		
 		/*
 		 * char 자료형에 숫자가 대입될 수 있는 이유!
