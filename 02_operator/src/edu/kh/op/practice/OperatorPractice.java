@@ -16,7 +16,8 @@ public class OperatorPractice {
 		 * 인원 수 : 29
 		 * 사탕 개수 : 100
 		 * 1인당 사탕 개수 : 3
-		 * 남는 사탕 개수 : 13*/
+		 * 남는 사탕 개수 : 13
+		 * */
 		
 		Scanner sc = new Scanner(System.in);
 		
@@ -46,24 +47,26 @@ public class OperatorPractice {
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.print("이름 : ");
-		String input1 = sc.next();
+		String name = sc.next();
 
 		System.out.print("학년 : ");
-		int input2 = sc.nextInt();
+		int grade = sc.nextInt();
 		
 		System.out.print("반 : ");
-		int input3 = sc.nextInt();
+		int classroom = sc.nextInt();
 		
 		System.out.print("번호 : ");
-		int input4 = sc.nextInt();
+		int number = sc.nextInt();
+		
+		sc.nextLine(); // 입력버퍼 비우는 일(개행문자 제거) 
 		
 		System.out.print("성별(남학생/여학생) : ");
-		String input5 = sc.next();
+		String gender = sc.next();
 		
 		System.out.print("성적(소수점 둘째 자리까지) : ");
-		float input6 = sc.nextFloat();
+		double score = sc.nextDouble();
 		
-		System.out.printf("%d학년 %d반 %d번호 %s %s의 성적은 %.2f이다.\n", input2, input3, input4, input1, input5, input6);
+		System.out.printf("%d학년 %d반 %d번호 %s %s의 성적은 %.2f이다.\n", grade, classroom, number, name, gender, score);
 		
 	}
 	public void practice3() {
@@ -77,16 +80,26 @@ public class OperatorPractice {
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.print("국어 : ");
-		int input1 = sc.nextInt();
+		int kor = sc.nextInt();
 
 		System.out.print("영어 : ");
-		int input2 = sc.nextInt();
+		int eng = sc.nextInt();
 		
 		System.out.print("수학 : ");
-		int input3 = sc.nextInt();
+		int math = sc.nextInt();
+		
+		int sum = kor + eng + math;  // 합계
+		double avg = sum / 3.0; // 평균
 		
 		System.out.println();
-		System.out.printf("합계 : %d\n", (input1 + input2 + input3));
-		System.out.printf("평균 : %.1f \n", (input1 + input2 + input3) / 3.0);
+		System.out.printf("합계 : %d\n", sum);
+		System.out.printf("평균 : %.1f \n", avg);
+		
+		// 각 과목이 40점 이상, 평균 60점 이상이어야 합격
+		// 그 이외 불합격 출력
+		
+		boolean result = ( (kor >= 40) && (eng >= 40) && (math >= 40) && (avg >=60) );
+		
+		System.out.println(result ? "합격" : "불합격");
 	}
 }

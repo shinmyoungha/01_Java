@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class OperatorPractice2 {
 	public void practice2(){
-
 	
 	/*
 	 * 키보드로 나이를 입력받아 
@@ -20,19 +19,17 @@ public class OperatorPractice2 {
 	Scanner sc = new Scanner(System.in);
 	
 	System.out.print("당신의 나이는 ? : ");
+	int age = sc.nextInt();
 	
-	
-	int input = sc.nextInt();
-	
-	String result1 = input >= 20 ? "저는 성인입니다." : "저는 미성년입니다.";
+	String result1 = age >= 20 ? "저는 성인입니다." : "저는 미성년입니다.";
 	System.out.println(result1);
 	
 	System.out.printf("청소년 입니까? " );
-	System.out.println((input >= 13) && (input <= 19) ? true : false);
+	System.out.println((age >= 13) && (age <= 19) ? true : false);
 
-	System.out.printf("노인이거나 어린이 입니까? ", input);
+	System.out.printf("노인이거나 어린이 입니까? ", age);
 	
-	System.out.println((input >= 65) || (input <= 12) ? true : false);
+	System.out.println((age >= 65) || (age <= 12) ? true : false);
 	
 	}
 }
