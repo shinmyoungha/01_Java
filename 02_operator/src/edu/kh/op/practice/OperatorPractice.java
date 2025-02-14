@@ -69,7 +69,8 @@ public class OperatorPractice {
 		System.out.printf("%d학년 %d반 %d번호 %s %s의 성적은 %.2f이다.\n", grade, classroom, number, name, gender, score);
 		
 	}
-	public void practice3() {
+	
+public void practice3() {
 		
 		/*
 		 * 국어, 영어, 수학에 대한 점수를 키보드를 이용해 
