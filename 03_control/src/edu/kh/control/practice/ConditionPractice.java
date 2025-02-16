@@ -28,9 +28,8 @@ public class ConditionPractice {
 	} else {
 		result = "홀수입니다";
 	}
-	}
+}
 
-	
 	public void practice2(){
 
 		/* 국어, 영어, 수학 세 과목의 점수를 키보드로 입력 받고 
@@ -52,6 +51,8 @@ public class ConditionPractice {
 		int sum = kor + math + eng;  // 합계
 		double avg = sum / 3.0; // 평균
 		
+		// 각 과목이 40점 이상, 평균 60점 이상이어야 합격
+		// 그 이외 불합격 출력	
 		
 		if ( kor >= 40 && math >= 40 && eng >= 40 && avg >= 60) {	 
 			 System.out.println("국어 : " + kor);
@@ -65,13 +66,8 @@ public class ConditionPractice {
 				 System.out.println("합계 : " + sum);
 				 System.out.println("평균 : " + avg);
 				 System.out.println("불합격입니다.");
-			}
-		
-		
-		// 각 과목이 40점 이상, 평균 60점 이상이어야 합격
-		// 그 이외 불합격 출력		
-	
-	}
+			}	
+}
 
 	public void practice3() {
 		
@@ -150,60 +146,60 @@ public class ConditionPractice {
 		}
 		System.out.println(result);
 	}
-	
+
 	public void practice5() {
 		
-	/* 중간고사, 기말고사, 과제점수, 출석횟수를 입력하고 
-	 * Pass 또는 Fail을 출력하세요.
-	 * 평가 비율은 중간고사 20%, 기말고사 30%, 
-	 * 과제 30%, 출석 20%로 이루어져 있고
-	 * 이 때, 출석 횟수는 총 강의 횟수 20회 중에서 
-	 * 출석한 날만 따진 값으로 계산하세요.
-	 * 70점 이상일 경우 Pass, 70점 미만이거나 
-	 * 전체 강의에 30% 이상 결석 시 Fail을 출력하세요.
-	 */
-		System.out.print("중간 고사 점수 : ");
-		double midTerm = sc.nextDouble();
+		/* 중간고사, 기말고사, 과제점수, 출석횟수를 입력하고 
+		 * Pass 또는 Fail을 출력하세요.
+		 * 평가 비율은 중간고사 20%, 기말고사 30%, 
+		 * 과제 30%, 출석 20%로 이루어져 있고
+		 * 이 때, 출석 횟수는 총 강의 횟수 20회 중에서 
+		 * 출석한 날만 따진 값으로 계산하세요.
+		 * 70점 이상일 경우 Pass, 70점 미만이거나 
+		 * 전체 강의에 30% 이상 결석 시 Fail을 출력하세요.
+		 */
+			System.out.print("중간 고사 점수 : ");
+			double midTerm = sc.nextDouble();
 
-		System.out.print("기말 고사 점수 : ");
-		double finalTerm = sc.nextDouble();
-		
-		System.out.print("과제 점수 : ");
-		double report = sc.nextDouble();
-		
-		System.out.print("출석 횟수 : ");
-		double attendance = sc.nextDouble();
-		
-		// 각각의 점수를 비율에 맞게 변경
-		midTerm *= 0.2; // midTerm = (int)midTerm * 0.2; 강제 형변환
-		// midTerm = midTerm * 0.2 이건 오류난다  
-		// 위에서 int로 midTerm 받으면
-		finalTerm *= 0.3;
-		report *= 0.3;
-		
-		System.out.println("=============== 결과 ===============");
-		
-		if(attendance <= 20 * 0.7) { // 출석 만족 못했을 때 (70% 이상 출석했는지)
-			// 총 강의 횟수 : 20
-			// 결석 기준 : 0.3
-			// (1 - 0.3) = 0.7 -> 70 % 이상 출석해야한다는 의미
+			System.out.print("기말 고사 점수 : ");
+			double finalTerm = sc.nextDouble();
 			
-			System.out.println("Fail [출석 횟수 부족] (" + (int)attendance +" /20)");
-		} else { // 출석 만족 시
+			System.out.print("과제 점수 : ");
+			double report = sc.nextDouble();
 			
-		System.out.printf("중간 고사 점수(20) : %.1f\n", midTerm );
-		System.out.printf("기말 고사 점수(30) : %.1f\n", finalTerm );
-		System.out.printf("과제  점수	(30) :  %.1f\n", report );
-		System.out.printf("출석 횟수  	(20) :  %.1f\n", attendance );
-		
-		double sum =midTerm + finalTerm + report + attendance;
-		System.out.printf("총점 : %.1f\n",sum );
-		
-		if(sum >= 70) {
-			System.out.println("PASS" );
-		} else {
-			System.out.println("Fail [점수미달]");
-		}
+			System.out.print("출석 횟수 : ");
+			double attendance = sc.nextDouble();
+			
+			// 각각의 점수를 비율에 맞게 변경
+			midTerm *= 0.2; // midTerm = (int)midTerm * 0.2; 강제 형변환
+			// midTerm = midTerm * 0.2 이건 오류난다  
+			// 위에서 int로 midTerm 받으면
+			finalTerm *= 0.3;
+			report *= 0.3;
+			
+			System.out.println("=============== 결과 ===============");
+			
+			if(attendance <= 20 * 0.7) { // 출석 만족 못했을 때 (70% 이상 출석했는지)
+				// 총 강의 횟수 : 20
+				// 결석 기준 : 0.3
+				// (1 - 0.3) = 0.7 -> 70 % 이상 출석해야한다는 의미
+				
+				System.out.println("Fail [출석 횟수 부족] (" + (int)attendance +" /20)");             
+			} else { // 출석 만족 시
+				
+			System.out.printf("중간 고사 점수(20) : %.1f\n", midTerm );
+			System.out.printf("기말 고사 점수(30) : %.1f\n", finalTerm );
+			System.out.printf("과제  점수	(30) :  %.1f\n", report );
+			System.out.printf("출석 횟수  	(20) :  %.1f\n", attendance );
+			
+			double sum =midTerm + finalTerm + report + attendance;
+			System.out.printf("총점 : %.1f\n",sum );
+			
+			if(sum >= 70) {
+				System.out.println("PASS" );
+			} else {
+				System.out.println("Fail [점수미달]");
+				}
+			}
 		}
 	}
-}

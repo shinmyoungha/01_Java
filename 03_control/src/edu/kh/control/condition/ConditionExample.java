@@ -307,7 +307,7 @@ public class ConditionExample { // 기능 제공용 클래스
 		// 점수 입력 (0~100) : 85
 		// 학점 B
 		
-		System.out.println("점수 입력(0 ~ 100) : ");
+		System.out.print("점수 입력(0 ~ 100) : ");
 		// 점수 범위 벗어난 건 생각x
 		int score = sc.nextInt();
 		

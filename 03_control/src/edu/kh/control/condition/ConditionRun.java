@@ -16,6 +16,7 @@ public class ConditionRun { // 실행용 메서드
 		//condition.ex9();
 		condition.ex10();
 		
+		
 	}
 
 }
