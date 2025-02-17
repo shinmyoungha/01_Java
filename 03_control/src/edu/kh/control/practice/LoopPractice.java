@@ -204,7 +204,7 @@ public class LoopPractice {
 		int input = sc.nextInt();
 
 
-        for (int row = 1; row <= input; row++) {  // row는 1부터 input까지 증가
+        for (int row = 1; row <= input; row++) {  // row 는 1부터 input 까지 증가
         	
             for (int space = 1; space <= input - row; space++) { // 공백 출력 (input - row 개)
                 System.out.print(" ");
@@ -254,7 +254,7 @@ public class LoopPractice {
 			for (int col = 1; col <= row; col++) {
 				System.out.print("*");
 			
-			}System.out.println(); // 줄바꿈
+			}	System.out.println(); // 줄바꿈
 		}
 	}
 
