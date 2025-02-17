@@ -108,7 +108,7 @@ public class BranchExample { // 기능 제공용 클래스
 		// 1 ~ 3 사이 난수 사용
 		
 		// 1이면 가위, 2면 바위, 3이면 보 지정
-		// 컴퓨터와 플레이어 가위바위보 파녑ㄹ
+		// 컴퓨터와 플레이어 가위바위보 판별
 		// 플레이어 승! / 졌습니다 ㅠㅠ / 비겼습니다
 		// 매 판마다 - 현재 기록 : 2승 1무 0패
 		
@@ -171,34 +171,74 @@ public class BranchExample { // 기능 제공용 클래스
 					System.out.println("졌습니다 ㅠㅠ");
 					lose++;
 				}
-			} // 바깥쪽 if문의 끝
+			} // 바깥쪽 if 문 끝
 			System.out.printf("현재 기록 : %d승 %d무 %d패\n", win, draw, lose);
-		} // for문의 끝
+		} // for 문 끝
 	}
 
 	public void ex5() {
 		
-		// 가위바위보 게임 
-		// 몇 판 할지 입력받음
-		// 입력받은 판 수 만큼 반복
-		// 컴퓨터는 : Math.random() : 0.0 ~ 1.0 사이 난수 생성
-		// 1 ~ 3 사이 난수 사용
-				
-		// 1이면 가위, 2면 바위, 3이면 보 지정
-		// 컴퓨터와 플레이어 가위바위보 파녑ㄹ
-		// 플레이어 승! / 졌습니다 ㅠㅠ / 비겼습니다
-		// 매 판마다 - 현재 기록 : 2승 1무 0패
-		
 		Scanner sc = new Scanner(System.in);
+		
 		System.out.println("[가위 바위 보 게임~!!!]");
 		System.out.print("몇 판? : ");
 		int round = sc.nextInt();
 		
-		for(int i = 1; i <= round; i++) {
-			System.out.println("가위/바위/보 중 하나 입력");
+		// 승패 기록용 변수
+		int win = 0;   //승
+		int draw = 0;  //무
+		int lose = 0;  //패
+		
+		for(int i = 1; i <= round; i++) { // 입력받은 판 수 만큼 반복
 			
-		}
-		
-		
+			System.out.println("\n" + i + "번 째 게임");
+			System.out.print("가위/바위/보 중 하나 입력 : ");
+			String input = sc.next();
+			
+			int random = (int)(Math.random() * 3 + 1);
+			
+			//Math.random() : 0.0 ~ 1.0 사이
+			// 0.0 <= x < 1.0
+			// 0.0 <= x * 3 + 1 <= 3.0
+			// 1.0 <= x * 3 + 1 <= 4.0
+			// 1.0 <= (int) (x * 3 + 1) < 4
+			// 1 <= x < 4
+			// --> 1이상 4미만 정수 --> 1 2 3
+			
+			// switch 로 random 값을 문자열로 바꾸기
+			String com = null;
+			//null : 아무것도 참조하고 있지 않음.
+			
+			switch(random) {
+			case 1 : com = "가위"; break;
+			case 2 : com = "바위"; break;
+			case 3 : com = "보"; break;
+			}
+			
+			System.out.printf("컴퓨터는 [%s]를 선택했습니다.\n", com);
+			
+			// 컴퓨터와 플레이어 가위바위보 판별
+			// 비긴경우
+			// 이기거나 진 경우
+			
+			if(input.equals(com) ) { // 비긴경우
+				System.out.println("비겼습니다.");
+				draw++;
+				
+			} else { // 이기거나 진 경우
+				boolean win1 = input.equals("가위") && com.equals("보");
+				boolean win2 = input.equals("바위") && com.equals("가위");
+				boolean win3 = input.equals("보") && com.equals("바위");
+				
+				if(win1 || win2 || win3) {
+					System.out.println("플레이어 승");
+				
+				} else {
+					System.out.println("졌습니다 ㅠㅠ");
+					lose++;
+				}
+			} // 바깥쪽 if문 끝
+			System.out.printf("현재 기록 : %d승 %d무 %d패\n", win, draw, lose);
+		} // for문  끝
 	}
 }
