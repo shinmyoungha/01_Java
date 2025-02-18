@@ -18,6 +18,6 @@ public class ArrayRun {
 		ArrayExample2 arrayEx2 = new ArrayExample2();
 		//arrayEx2.shallowCopy();
 		//arrayEx2.deepCopy();	
-		arrayEx2.creatLottoNumber();	
+		//arrayEx2.creatLottoNumber();	
 	}
 }
