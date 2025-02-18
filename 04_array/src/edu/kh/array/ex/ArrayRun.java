@@ -4,15 +4,20 @@ public class ArrayRun {
 	
 	public static void main(String[] args) {
 		
-		ArrayExample1 arratEx1 = new ArrayExample1();
-		//arratEx1.ex1();
-		//arratEx1.ex2();
-		//arratEx1.ex3();
-		//arratEx1.ex4();
-		//arratEx1.ex5();
-		//arratEx1.ex6();
-		//arratEx1.ex7();
-		//arratEx1.ex8();
-		arratEx1.ex9();
+		ArrayExample1 arrayEx1 = new ArrayExample1();
+		//arrayEx1.ex1();
+		//arrayEx1.ex2();
+		//arrayEx1.ex3();
+		//arrayEx1.ex4();
+		//arrayEx1.ex5();
+		//arrayEx1.ex6();
+		//arrayEx1.ex7();
+		//arrayEx1.ex8();
+		//arrayEx1.ex9();
+		
+		ArrayExample2 arrayEx2 = new ArrayExample2();
+		//arrayEx2.shallowCopy();
+		//arrayEx2.deepCopy();	
+		arrayEx2.creatLottoNumber();	
 	}
 }
