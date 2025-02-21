@@ -8,7 +8,7 @@ public class MethodRun {
 	public static void main(String[] args) {
 		
 		MethodExample methodEx = new MethodExample();
-		methodEx.method1();
+		//methodEx.method1();
 
 		
 		MemberService service = new MemberService();
