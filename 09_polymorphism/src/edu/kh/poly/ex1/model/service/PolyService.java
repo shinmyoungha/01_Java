@@ -54,7 +54,7 @@ public class PolyService {
 		car.setEngine("전기모터");
 		car.setFuel("전기");
 		car.setWheel(4);
-
+		car2.setBatteryCapacity(1000000);
 		// The method setBatteryCapacity(int) is undefined for the type Car
 	}
 }
