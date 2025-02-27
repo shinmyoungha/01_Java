@@ -7,14 +7,19 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 
-		int H = sc.nextInt();
-		int M = sc.nextInt();
+		int A = sc.nextInt();
+		int B = sc.nextInt();
+		int C = sc.nextInt();
 
-		if((H <= 0) || (M <= 45)) {
-			System.out.printf("%d %d", (24 - 1),(M + (60 - 45)));
-		} else {
-			System.out.printf("%d %d",H, M);
-			
-		}
+		int Q = C / 60; // B 추가 시간
+		int W = C % 60; // A 추가 분
+
+		if (B + W > 60) {
+			if (B + W >= 60) {
+				System.out.printf("%d %d", A + ((B + C) / 60), (B + W) % 60);
+			} else if (B + W < 60) {
+				System.out.printf("%d %d", A + ((B + C) / 60), (B + W));
+			}
+		} 
 	}
 }
