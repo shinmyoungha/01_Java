@@ -1,11 +1,12 @@
 package com.hw1.model.dto;
 
 public abstract class Book {
-	
+
 	private String title; // 제목
 	private String author; // 저자
-	
-	public Book() {}
+
+	public Book() {
+	}
 
 	public Book(String title, String author) {
 		super();
@@ -28,14 +29,7 @@ public abstract class Book {
 	public void setAuthor(String author) {
 		this.author = author;
 	}
-	
+
 	public abstract void displayInfo();
-	
-	
-	
-	
-	
-	
-	
-	
+
 }
