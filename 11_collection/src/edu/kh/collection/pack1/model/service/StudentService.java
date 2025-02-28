@@ -1,12 +1,16 @@
 package edu.kh.collection.pack1.model.service;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 import java.util.jar.Attributes.Name;
 
 import edu.kh.collection.pack1.model.dto.Student;
+
+
 
 public class StudentService {
 
@@ -100,11 +104,11 @@ public class StudentService {
 				case 1:	System.out.println(addStudent()); break;
 				case 2:	selectAll(); break;
 				case 3:	System.out.println(updateStudent()); break;
-				case 4:	removeStudent();  break;
-				case 5: /* searchName1(); */ break;
-				case 6:/* searchName2(); */ break;
-				case 7:	/* sortByAge(); */ break;
-				case 8:/* sortByName(); */ break;
+				case 4:	removeStudent(); break;	
+				case 5:	searchName1(); break;
+				case 6:	searchName2(); break;
+				case 7:	sortByAge(); break;
+				case 8:	sortByName(); break;
 				case 0:	System.out.println("프로그램 종료.."); break;
 				default: System.out.println("메뉴에 작성된 번호만 입력하세요!");
 				}
@@ -271,52 +275,165 @@ public class StudentService {
 	/**
 	 * 4. 학생 정보 제거 메서드
 	 * 
-	 * 수정과 같은 검사 후
-	 * 삭제 시
-	 * "정말 삭제하시겠습니까? (Y/N) : "
-	 * Y를 입력했다면 해당 인덱스에 있는 객체 삭제 후
-	 * "OOO님의 정보가 제거되었습니다" 리턴
-	 * N을 입력했다면 "취소" 리턴
+	 * 수정과 같은 검사 후 삭제 시 "정말 삭제하시겠습니까? (Y/N) : " Y를 입력했다면 해당 인덱스에 있는 객체 삭제 후 "OOO님의
+	 * 정보가 제거되었습니다" 리턴 N을 입력했다면 "취소" 리턴
+	 * 
 	 * @return
 	 */
 	public String removeStudent() {
-		
+
 		System.out.println("=========학생 정보 제거===========");
-		
-		
+
 		// Student List.remove(int index);
 		// 리스트에서 index번째 요소를 제거
 		// 이 때 제거된 요소가 반환됨.
 		// * List 중간에 비어있는 인덱스가 없게 하기 위해서
 		// remove() 동작 시 뒤쪽 요소를 한칸씩 자동으로 당겨온다.
-		
+
 		System.out.print("인덱스 번호 : ");
 		int index = sc.nextInt();
 
 		// 1) 학생 정보가 studentList에 하나라도 있는지 검사
-		if (studentList.isEmpty()) 	
+		if (studentList.isEmpty())
 			return "입력된 학생정보가 없습니다";
 
-			// 2) 입력된 숫자가 0보다 작은지
-		 if (index < 0) 
-			 return "음수는 입력할 수 없습니다";
+		// 2) 입력된 숫자가 0보다 작은지
+		if (index < 0)
+			return "음수는 입력할 수 없습니다";
 
-			// studentList 범위 내 인덱스 번호인지 감지
-		if (index >= studentList.size()) 
+		// studentList 범위 내 인덱스 번호인지 감지
+		if (index >= studentList.size())
 			return "범위를 넘어선 값을 입력할 수 없습니다";
-		
+
 		// 4) 삭제
 		System.out.print("정말 삭제 하시겠습니까?(Y/N) : ");
 		char ch = sc.next().toUpperCase().charAt(0);
 		// "y" -> "Y" ->'Y'
-		
-		if(ch == 'Y') {
+
+		if (ch == 'Y') {
 			Student temp = studentList.remove(index);
 			return temp.getName() + "의 정보가 제거되었습니다";
 		}
-		
+
 		return "취소";
-		
+
+	}
 	
+	
+	/**
+	 * 5. 이름이 일치하는 학생을 ㅊ팢아 조회하는 메서드(완전일치)
+	 * 
+	 * - 검색할 이름을 입력받아 studentList에서 꺼내온
+	 *  Stuednt 객체의 name값이 같은지 비교
+	 *  
+	 *  - 일치하는 경우 Student 객체 출력
+	 *  - 일치하는게 없다면 "검색 결과가 없습니다" 출력
+	 */
+	public void searchName1() {
+		
+		System.out.println("====학생 검색(이름 완전 일치)====");
+		
+		System.out.println("검색할 이름 입력 : ");
+		String input = sc.next();
+		
+		boolean flag = true;
+		
+		// 향상된 for 문
+		for(Student std : studentList) {
+			
+			if(input.equals(std.getName())) { // 이름이 일치하는 경우
+				System.out.println(std); // std.toString();
+				
+				flag = false;
+			} 
+		}
+		if(flag = true) {
+			System.out.println("검색 결과가 없습니다.");
+		}
+	}
+	
+	/**
+	 * 6. 이름에 특정 문자열이 포함되는 학생을 찾아서 조회하는 메서드
+	 * 
+	 * 문자열 입력받아 studentList에서 꺼내온 
+	 * Student 객체의 name 값에 포함되는 문자열인지 검사
+	 * 
+	 * - 포함되는 학생 객체를 찾은 경우 Student 객체 출력
+	 * - 없다면 "검색 결과가 없습니다" 출력
+	 */
+	public void searchName2() {
+		
+		/*
+		 * List를 정렬하는 방법
+		 * 
+		 * 방법 1: Comparable 인터페이스 상속받아 compareTo() 메서드 재정의
+		 * Student에 Comparable 인터페이스를 상속받아 오버라이딩한 compareTo()에
+		 * 정의한 대로 정렬됨(나이 오름차순, 내림차순..)
+		 * 
+		 * 방법 2: comparator 클래스에 의한 정렬 compare() 사용(익명 내부 클래스 이용)
+		 * 익명 내부 클래스 : 이름이 없는 클래스를 즉석에서 선언해서 한 번만 사용할 목적으로 작성
+		 * 객체를 생성하면서 바로 구현 내용을 정의할 수 있음
+		 * 
+		 * 익명 내부 클래스 장점  
+		 * 코드 간결화(별도로 클래스를 만들지 않아도 될 때 사용)
+		 * 즉시 사용(한 번만 사용할 Comparator 들을 정의할 떄 유용함)
+		 * 지역화(특정 메서드 안에서만 필요할 때)
+		 * */
+		System.out.println("====학생 검색(이름 부분 포함)====");
+		
+		System.out.println("이름에 포함되는 문자열 입력 : ");
+		String input = sc.next();
+		
+		boolean flag = true;
+		
+		for(Student std : studentList) {
+			
+			// 순서 유의!
+			// boolean String.contains(문자열) : String에 문자열이 포함되어있으면 true/false
+			if(std.getName().contains(input)) { // std.getName()에 input이 포함되어 있느냐?
+				System.out.println(std);
+				
+				flag = false;
+			}
+		}
+		if(flag) {
+			System.out.println("검색 결과가 없습니다.");
+		}
+	}
+	
+	public void sortByAge() {
+		
+		Collections.sort(studentList);
+		
+		for(Student std : studentList) {
+			System.out.println(std);
+		}
+	}
+	
+	/**
+	 * 이름에 따라 정렬(가나다순)
+	 */
+	public void sortByName() {
+		// 익명 내부클래스는 Comparator 인터페이스를 상속받음
+		// 구현한 구현체(== 클래스)
+		Collections.sort(studentList, new Comparator<Student>() {
+
+			@Override
+			public int compare(Student o1, Student o2) {
+			// 이름 비교
+				return o1.getName().compareTo(o2.getName());
+				// name은 String형이라 compareTo 로 비교
+				
+				// String.compareTo() : 자바에서 객체를 비교하는 메서드
+				// (String이 Comparable을 상속받아 재정의해둔 compareTo() 메서드를 이용하는 것)
+				
+				// compareTo() : 두 객체를 비교하고 순서 결정함.
+				// 반환값 : 0(같음), 양수(왼쪽객체가 더 큼), 음수(왼쪽객체가 더 작음)
+			}
+		});
+		
+		for(Student std : studentList) {
+			System.out.println(std);
+		}
 	}
 }
