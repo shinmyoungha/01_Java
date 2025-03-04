@@ -15,6 +15,6 @@ public class Monkey extends Animal {
 	}
 	
 	public void sound() {
-		System.out.println("우끼끼 소리를 냅니다.");
+		System.out.println(name + "가 우끼끼 소리를 냅니다.");
 	}
 }
