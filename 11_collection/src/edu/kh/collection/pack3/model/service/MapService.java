@@ -69,7 +69,7 @@ public class MapService {
 		map.put("age", 25);
 		
 		// 값 출력
-		// Object(Value) Map.get(Object Key) : 매개변수로 전달받은 Key와 대으오디는 Value 반환
+		// Object(Value) Map.get(Object Key) : 매개변수로 전달받은 Key 와 대응되는 Value 반환
 		System.out.println( map.get("id") );
 		System.out.println( map.get("pw") );
 		System.out.println( map.get("age") );

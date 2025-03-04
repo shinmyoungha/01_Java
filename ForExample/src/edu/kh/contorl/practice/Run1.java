@@ -7,8 +7,8 @@ public class Run1 {
 		ConditionPractice cp = new ConditionPractice();
 		//cp.practice1();
 		//cp.practice2();
-		//cp.practice3();
+		cp.practice3();
 		//cp.practice4();
-		cp.practive5();
+		//cp.practive5();
 	}
 }
