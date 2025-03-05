@@ -106,28 +106,15 @@ public class ToyFactory {
 				menuNum = sc.nextInt();
 
 				switch (menuNum) {
-				case 1: displayAllToys(); break;
-				
-				case 2: createNewToy(); break;
-				
+				case 1: displayAllToys(); break;				
+				case 2: createNewToy(); break;				
 				case 3: deleteToy(); break;
-				
 				case 4: displayToysByManufactureDate(); break;
-				case 5: displayToysByAge(); break;
-					
-				case 6:
-					addMaterial();
-					break;
-				case 7:
-					removeMaterialByName();
-					break;
-				
-				case 0:
-					System.out.println("프로그램을 종료합니다");
-					break;
-				default:
-					System.out.println("잘못된 입력입니다. 다시 입력해주세요!");
-
+				case 5: displayToysByAge(); break;					
+				case 6:	addMaterial(); break;
+				case 7: removeMaterialByName(); break;				
+				case 0:	System.out.println("프로그램을 종료합니다"); break;
+				default: System.out.println("잘못된 입력입니다. 다시 입력해주세요!");
 				}
 
 			} catch (Exception e) {
@@ -490,13 +477,6 @@ public class ToyFactory {
 				System.out.println(index + ". " + toy);
 				index++;
 			}
-			
 		}
-		
-		
 	}
-	
-	
-	
-
 }
