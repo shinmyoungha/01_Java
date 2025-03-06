@@ -29,6 +29,8 @@ public class Toy {
 		this.materials = materials;
 	}
 
+	
+	// 장난감 이름
 	public String getName() {
 		return name;
 	}
@@ -37,6 +39,8 @@ public class Toy {
 		this.name = name;
 	}
 
+	
+	// 사용 가능 연령
 	public int getAge() {
 		return age;
 	}
@@ -45,6 +49,7 @@ public class Toy {
 		this.age = age;
 	}
 
+	// 가격
 	public int getPrice() {
 		return price;
 	}
@@ -53,6 +58,8 @@ public class Toy {
 		this.price = price;
 	}
 
+	
+	// 색상
 	public String getColor() {
 		return color;
 	}
@@ -61,6 +68,8 @@ public class Toy {
 		this.color = color;
 	}
 
+	
+	// 제조일
 	public String getManufactureDate() {
 		return manufactureDate;
 	}
@@ -69,6 +78,8 @@ public class Toy {
 		this.manufactureDate = manufactureDate;
 	}
 
+	
+	// 재료
 	public Set<String> getMaterials() {
 		return materials;
 	}
