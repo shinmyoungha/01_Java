@@ -112,7 +112,7 @@ public class SetService {
 		// 1. Iterator (반복자)
 		// - 컬렉션 객체에 저장된 요소를
 		// 하나씩 순차 접근하는 객체
-
+		
 		// Iterator set.iterator() :
 		// 현재 Set 을 순차 접근할 수 있는 Iterator 객체 반환
 		Iterator<String> it = set.iterator();

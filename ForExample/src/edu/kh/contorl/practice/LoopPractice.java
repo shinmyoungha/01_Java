@@ -18,7 +18,7 @@ public class LoopPractice {
 		} else {
 			
 			for(int i = 1; i <= input; i++) {
-				System.out.print(i+" ");
+				System.out.print(i + " ");
 			}
 		}
 	}
@@ -104,7 +104,6 @@ public class LoopPractice {
 			}
 		}
 	}
-	
 	public void practice7() {
 		
 		System.out.print("정수 입력 : ");
@@ -119,13 +118,11 @@ public class LoopPractice {
 	}
 	
 	public void practice8() {
-		
 		System.out.print("정수 입력 : ");
-		int input = sc.nextInt(); 
+		int input = sc.nextInt();
 		
-		for(int row = input; row >= 1; row --) { // 행 입력받은 수만큼 하나씩 줆
-			
-			for(int col = 1; col <= row; col++) { // 열 행만큼 하나씩 늚
+		for(int row = input; row >= 1; row--) {
+			for(int col = 1; col <= row; col++) {
 				System.out.print("*");
 			}
 			System.out.println();
@@ -137,18 +134,15 @@ public class LoopPractice {
 		System.out.print("정수 입력 : ");
 		int input = sc.nextInt();
 		
-		for(int row = 1; row <= input; row++) { // 행 입력받은 수만큼 하나씩 늚
-			
-			// 공백은 입력받은 수 - 행, 공백 하나씩 늚
-			for(int space = 1; space <= (input - row); space++) { 
+		for(int row = 1; row <= input; row++) {
+			for(int space = 1; space <= input - row; space ++) {
 				System.out.print(" ");
 			}
-			for(int col = 1; col <= row; col++) { // 열 행만큼 하나씩 늚
+			for(int col = 1; col <= row; col++) {
 				System.out.print("*");
 			}
 			System.out.println();
 		}
-		
 	}
 	
 	public void practice10() {
@@ -156,18 +150,17 @@ public class LoopPractice {
 		System.out.print("정수 입력 : ");
 		int input = sc.nextInt();
 		
-		for(int row = 1; row <= input; row++) { // 행 입력받은 수만큼 늚
-			for(int col = 1; col <= row; col ++){ // 열 행만큼 늚
-				System.out.print("*");
-			}
-			System.out.println(); // 다음줄
+		for(int row = 1; row <= input; row++) {
+		 for(int col = 1; col <= row; col++) {
+			 System.out.print("*");
+		 }
+		 System.out.println();
 		}
-		
-		for(int row = input -1; row >= 1; row--) { // 행 입력받은거 하나씩 줆
-			for(int col = 1; col <= row; col ++) { // 열 행만큼 하나씩 늚
+		for(int row = input; row >= 1; row--) {
+			for(int col = 1; col <= row; col++) {
 				System.out.print("*");
 			}
-			System.out.println(""); // 다음 줄로
+			System.out.println();
 		}
 	}
 	
@@ -176,52 +169,48 @@ public class LoopPractice {
 		System.out.print("정수 입력 : ");
 		int input = sc.nextInt();
 		
-		for(int row = 1; row <= input; row++) { // 행 입력받은 수만큼 늚
-			
-			// 공백 입력받은 수 - 행, 공백 하나씩 늚
-			for(int space = 1; space <= input - row; space++) { 				
+		for(int row = 1; row <= input; row++) {
+			for(int space = 1; space <= input - row; space++) {
 				System.out.print(" ");
 			}
-			for(int col = 1; col <=(2 * row -1); col++) { // 맨 위 1개 표시
+			for(int col = 1; col <= 2 * row - 1; col++) {
 				System.out.print("*");
 			}
-			System.out.println(); // 다음 줄
+			System.out.println();
 		}
 	}
-	
 	public void practice12() {
 		
 		System.out.print("정수 입력 : ");
 		int input = sc.nextInt();
 		
-		for(int row = 1; row <= input; row++) { // 행 1부터 입력받은 수까지 늚
-			for(int col = 1; col <= input; col++) { // 열 1부터 입력받은 수까지 늚
-				if(row == 1 || row == input || col == 1 || col == input) { // 열과 행 처음과 마지막 
+		for(int row = 1; row <= input; row++) {
+			for(int col = 1; col <= input; col++) {
+				if(row == 1 || row == input || col == 1 || col == input) {
 					System.out.print("*");
 				} else {
-					System.out.print(" "); // 중간에 공백 보여주기
+				System.out.print(" ");
 				}
 			}
-			System.out.println("");
+			System.out.println();
 		}
 	}
 	
 	public void practice13() {
 		
-		System.out.print("정수 입력 : ");
+		System.out.print("정수를 하나 입력하세요 : ");
 		int input = sc.nextInt();
 		int count = 0;
 		
 		for(int i = 1; i <= input; i++) {
-			if(i % 2 == 0 || i % 3 ==0) { // 2의 배수와 3의 배수 찾기
-				System.out.print(i + " "); // i값을 뒤에 더하기
-				// 2와 3의 공통인 배수를 찾으면 하나씩count에 더해라
-				if(i % 2 == 0 && i % 3 ==0) { 
+			if(i % 2 == 0 || i % 3 == 0) {
+				System.out.print(i + " ");
+				if(i % 2 == 0 && i % 3 == 0) {
 					count++;
 				}
 			}
 		}
-		System.out.println("\n count : " + count); // count 개수 출력
+		System.out.println("\ncount : " + count);
 	}
 }
 

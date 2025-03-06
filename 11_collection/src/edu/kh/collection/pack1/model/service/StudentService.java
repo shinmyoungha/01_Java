@@ -321,7 +321,7 @@ public class StudentService {
 	
 	
 	/**
-	 * 5. 이름이 일치하는 학생을 ㅊ팢아 조회하는 메서드(완전일치)
+	 * 5. 이름이 일치하는 학생을 찾아 조회하는 메서드(완전일치)
 	 * 
 	 * - 검색할 이름을 입력받아 studentList에서 꺼내온
 	 *  Stuednt 객체의 name값이 같은지 비교
