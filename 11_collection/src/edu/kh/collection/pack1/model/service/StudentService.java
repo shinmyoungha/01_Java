@@ -179,7 +179,7 @@ public class StudentService {
 		System.out.println("======학생 전체 조회==========");
 
 		// studentList가 비어있는지 확인하려면
-		// List에 저장된 데이터의 개수를 얻어오느 방법 : int List.size();
+		// List에 저장된 데이터의 개수를 얻어오는 방법 : int List.size();
 
 		// if(studentList.size() == 0) {
 		// boolean List.isEmpty() : 컬렉션이 비어있다면 true 반환

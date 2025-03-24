@@ -49,9 +49,9 @@ public class PolyService {
 		// Tesla 부모, 본인의 매서드 모두 사용 가능
 
 		// 1-3) car2 (부모 = 자식(Tesla))
-		car.setEngine("전기모터");
-		car.setFuel("전기");
-		car.setWheel(4);
+		car2.setEngine("전기모터");
+		car2.setFuel("전기");
+		car2.setWheel(4);
 		// car2.setBatteryCapacity(1000000);
 		// The method setBatteryCapacity(int) is undefined for the type Car
 
@@ -82,7 +82,7 @@ public class PolyService {
 		arr[2] = car3; // Spark 주소
 
 		for (int i = 0; i < arr.length; i++) {
-			System.out.println(i + "번째 인덱스의 엔진 : " + arr[i].getEngine());
+			System.out.println(i + "번째 인덱스의 엔진 : " + arr[i].getEngine() );
 		}
 
 		// 상속 + 다형성
@@ -90,7 +90,7 @@ public class PolyService {
 		// 다형성(업캐스팅) : 부모타입 참조변수 arr[i]로 자식객체를 참조할 수 있다.
 	}
 
-	// 전달받은 Car 또는 자식객체(Tesla, Spark)의 엔진, 연료, 바퀴갯수를 출력하느 메서드
+	// 전달받은 Car 또는 자식객체(Tesla, Spark)의 엔진, 연료, 바퀴갯수를 출력하는 메서드
 	public void printCar(Car temp) {
 		// Car temp = c(Car)
 		// Car temp = t(Tesla)
@@ -229,14 +229,14 @@ public class PolyService {
 		System.out.println( c2.toString() );
 		// edu.kh.poly.ex1.model.dto.Car.toString ()
 		// 참조변수 c2가 Car 타입이므로
-		// toString() 호출코드와 Car의 TOString 메소드 코드를 연결
+		// toString() 호출코드와 Car 의 TOString 메소드 코드를 연결
 		// -> 정적 바인딩
 		
 		// 실행해보면 자식(Spark)의 toString()이 호출되는것을 확인
 		// 경차엔진 / 휘발유 / 4 / 0.5
 		// -> 컴파일 시에는 부모(Car)와 바인딩 == 정적바인딩
 		// -> "실행 시" 에는 정적바인딩보다 자식(Spark)에서 오버라이딩된
-		// toString() 메서드가 우선시되어 Spark의 메서드와 바인딩
+		// toString() 메서드가 우선시되어 Spark 의 메서드와 바인딩
 		// == 동적바인딩
 		
 		
